@@ -16,7 +16,7 @@ namespace FaultTests
             _logger = logger;
         }
 
-        public Task Consume(ConsumeContext<StartProcess> context)
+        public async Task Consume(ConsumeContext<StartProcess> context)
         {
             // 20% chance of failure
             if (new Random().Next(5) == 1)
@@ -25,7 +25,8 @@ namespace FaultTests
             }
 
             _logger.LogInformation("Received Text: {Text}", context.Message.Message);
-            return Task.CompletedTask;
+
+            await context.Publish(new PlaceOrder { OrderId = Guid.NewGuid() });
         }
 
         readonly ILogger<StartProcessHandler> _logger;
