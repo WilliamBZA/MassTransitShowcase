@@ -24,6 +24,12 @@ namespace Orders
                             cfg.ConfigureEndpoints(context);
                         });
 
+                        x.AddConfigureEndpointsCallback((name, cfg) =>
+                        {
+                            if (cfg is IRabbitMqReceiveEndpointConfigurator rmq)
+                                rmq.SetQuorumQueue();
+                        });
+
                         x.AddConsumer<OrderPlacedHandler>(e =>
                         {
                             e.UseMessageRetry(c => c.Immediate(0));

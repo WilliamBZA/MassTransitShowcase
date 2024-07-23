@@ -16,16 +16,17 @@ namespace Sales
             _logger = logger;
         }
 
-        public Task Consume(ConsumeContext<PlaceOrder> context)
+        public async Task Consume(ConsumeContext<PlaceOrder> context)
         {
-            // 20% chance of failure
-            if (new Random().Next(5) == 1)
+            // 10% chance of failure
+            if (new Random().Next(10) == 1)
             {
-                throw new NotImplementedException();
+                throw new ApplicationException("Could not place the order successfully");
             }
 
             _logger.LogInformation("Placing order: {Text}", context.Message.OrderId.ToString());
-            return Task.CompletedTask;
+
+            await context.Publish(new OrderPlaced { OrderId = context.Message.OrderId });
         }
 
         readonly ILogger<PlaceOrderHandler> _logger;

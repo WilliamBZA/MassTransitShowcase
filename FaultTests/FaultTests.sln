@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaultTests", "FaultTests.csproj", "{E959621C-0829-49DC-B180-74BA3D2691F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "Worker.csproj", "{E959621C-0829-49DC-B180-74BA3D2691F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "..\Contracts\Contracts.csproj", "{84B69856-5ACC-4912-895E-E2BB037D6A25}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaultConsumerProcess", "..\FaultConsumerProcess\FaultConsumerProcess.csproj", "{A58E6FEC-F9AF-4CDF-AB1C-672CE716C633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales", "..\Sales\Sales.csproj", "{75386018-DAD0-433E-9210-5AFAED55E9A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales", "..\Sales\Sales.csproj", "{75386018-DAD0-433E-9210-5AFAED55E9A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders", "..\Orders\Orders.csproj", "{4E84DF06-79C1-4DEB-B7AD-F9190ABABE0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders", "..\Orders\Orders.csproj", "{4E84DF06-79C1-4DEB-B7AD-F9190ABABE0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

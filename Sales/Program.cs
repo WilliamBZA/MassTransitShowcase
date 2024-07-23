@@ -24,6 +24,12 @@ namespace Sales
                             cfg.ConfigureEndpoints(context);
                         });
 
+                        x.AddConfigureEndpointsCallback((name, cfg) =>
+                        {
+                            if (cfg is IRabbitMqReceiveEndpointConfigurator rmq)
+                                rmq.SetQuorumQueue();
+                        });
+
                         x.AddConsumer<PlaceOrderHandler>(e =>
                         {
                             e.UseMessageRetry(c => c.Immediate(0));

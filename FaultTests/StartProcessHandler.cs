@@ -18,10 +18,10 @@ namespace FaultTests
 
         public async Task Consume(ConsumeContext<StartProcess> context)
         {
-            // 20% chance of failure
-            if (new Random().Next(5) == 1)
+            // 10% chance of failure
+            if (new Random().Next(10) == 1)
             {
-                throw new NotImplementedException();
+                throw new ApplicationException("Could not start a new sales process");
             }
 
             _logger.LogInformation("Received Text: {Text}", context.Message.Message);
