@@ -44,6 +44,8 @@ namespace FaultTests
 
         static async Task Main(string[] args)
         {
+            Console.Title = "Batch worker";
+
             var host = CreateHostBuilder(args).Build();
             Console.WriteLine("Starting endpoints...");
 

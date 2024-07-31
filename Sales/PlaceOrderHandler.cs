@@ -18,8 +18,8 @@ namespace Sales
 
         public async Task Consume(ConsumeContext<PlaceOrder> context)
         {
-            // 10% chance of failure
-            if (new Random().Next(10) == 1)
+            // 14% chance of failure
+            if (new Random().Next(7) == 1)
             {
                 throw new ApplicationException("Could not place the order successfully");
             }

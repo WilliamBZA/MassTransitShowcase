@@ -18,8 +18,8 @@ namespace Orders
 
         public Task Consume(ConsumeContext<OrderPlaced> context)
         {
-            // 10% chance of failure
-            if (new Random().Next(10) == 1)
+            // 14% chance of failure
+            if (new Random().Next(7) == 1)
             {
                 throw new ApplicationException("Could not ship the order");
             }

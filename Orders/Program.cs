@@ -42,6 +42,8 @@ namespace Orders
 
         static async Task Main(string[] args)
         {
+            Console.Title = "Orders";
+
             var host = CreateHostBuilder(args).Build();
             Console.WriteLine("Starting endpoints...");
 

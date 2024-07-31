@@ -42,6 +42,8 @@ namespace Sales
 
         static async Task Main(string[] args)
         {
+            Console.Title = "Sales";
+
             var host = CreateHostBuilder(args).Build();
             Console.WriteLine("Starting endpoints...");
 
